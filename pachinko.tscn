@@ -40,7 +40,7 @@ offset_right = 554.0
 offset_bottom = -238.0
 
 [node name="ball" parent="." instance=ExtResource("1_epw72")]
-position = Vector2(9, -113)
+position = Vector2(-474, -203)
 physics_material_override = SubResource("PhysicsMaterial_6b7t7")
 continuous_cd = 2
 
