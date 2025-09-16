@@ -1,5 +1,6 @@
 extends Button
 @export var marble_scene: PackedScene
+@export var spawn_pos: Vector2 = Vector2(-475.0,-200)
 
 
 var _duration_pressed = 0.0
@@ -23,7 +24,13 @@ func _on_button_up() -> void:
 	_charging = false
 	var angle = deg_to_rad(-45)
 	var dir = Vector2.RIGHT.rotated(angle)
-	spawn_marble_with_v(Vector2(-475, -200.0), dir, 300.0 * (_duration_pressed+1))
+	
+	if _duration_pressed > 2.0:
+		_duration_pressed = 2.0
+	
+	var vel = 300.0 * (_duration_pressed+1)
+	
+	spawn_marble_with_v(spawn_pos, dir, vel)
 	print(_duration_pressed)
 	_duration_pressed = 0.0
 

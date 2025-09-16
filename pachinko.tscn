@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://5rdlpi3ghblq"]
+[gd_scene load_steps=11 format=4 uid="uid://5rdlpi3ghblq"]
 
 [ext_resource type="Script" uid="uid://cg2w0lxd2jkbq" path="res://scripts/marblespawner.gd" id="1_6b7t7"]
 [ext_resource type="PackedScene" uid="uid://ctgdxoohubds7" path="res://marble.tscn" id="1_epw72"]
 [ext_resource type="Texture2D" uid="uid://d21h70axg0spf" path="res://assets/void.png" id="2_gsyfj"]
 [ext_resource type="PackedScene" uid="uid://bxr1a4seff6td" path="res://create_marble_btn.tscn" id="3_33s87"]
+[ext_resource type="Texture2D" uid="uid://cxwlsueenmku7" path="res://assets/floor.png" id="5_3huoa"]
 [ext_resource type="PackedScene" uid="uid://dd5d61adbgqn3" path="res://marble_despawn_zone.tscn" id="5_yapkp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6b7t7"]
@@ -23,9 +24,29 @@ texture = ExtResource("2_gsyfj")
 4:0/0 = 0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e27ee"]
+texture = ExtResource("5_3huoa")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSet" id="TileSet_yapkp"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_33s87")
+sources/2 = SubResource("TileSetAtlasSource_e27ee")
 
 [node name="pachinko" type="Node2D"]
 script = ExtResource("1_6b7t7")
@@ -48,7 +69,7 @@ continuous_cd = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(85, 13)
-tile_map_data = PackedByteArray("AADj//L/AAAEAAAAAADk//L/AAAEAAAAAADk//P/AAAEAAAAAADl//T/AAAEAAAAAADl//X/AAAEAAAAAADm//X/AAAEAAAAAADn//b/AAAEAAAAAADn//f/AAAEAAAAAADn//j/AAAEAAAAAADo//n/AAAEAAAAAADo//r/AAAEAAAAAADp//v/AAAEAAAAAADp//z/AAAEAAAAAADq//3/AAAEAAAAAADq//7/AAAEAAAAAADr////AAAEAAAAAADs/wAAAAAEAAAAAADs/wEAAAAEAAAAAADt/wEAAAAEAAAAAADt/wIAAAAEAAAAAADu/wIAAAAEAAAAAADv/wMAAAAEAAAAAADv/wQAAAAEAAAAAADw/wQAAAAEAAAAAADw/wUAAAAEAAAAAADx/wUAAAAEAAAAAADy/wYAAAAEAAAAAADz/wcAAAAEAAAAAAD0/wgAAAAEAAAAAAD1/wkAAAAEAAAAAAD2/wkAAAAEAAAAAAD3/woAAAAEAAAAAAADAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAGAAkAAAAEAAAAAAAHAAkAAAAEAAAAAAAIAAkAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAALAAYAAAAEAAAAAAAMAAUAAAAEAAAAAAANAAQAAAAEAAAAAAAOAAMAAAAEAAAAAAAOAAIAAAAEAAAAAAAPAAIAAAAEAAAAAAAPAAEAAAAEAAAAAAAQAAEAAAAEAAAAAAAQAAAAAAAEAAAAAAARAP//AAAEAAAAAAARAP7/AAAEAAAAAAASAP7/AAAEAAAAAAASAP3/AAAEAAAAAAASAPz/AAAEAAAAAAATAPv/AAAEAAAAAAAUAPr/AAAEAAAAAAAUAPn/AAAEAAAAAAAVAPj/AAAEAAAAAAAVAPf/AAAEAAAAAAAWAPf/AAAEAAAAAAAWAPb/AAAEAAAAAAAXAPX/AAAEAAAAAAAXAPT/AAAEAAAAAAAYAPP/AAAEAAAAAAAZAPP/AAAEAAAAAAAZAPL/AAAEAAAAAAAaAPL/AAAEAAAAAAD4/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAAEAAQAAAAAAAAAAAAJAAQAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AADt/w0AAgACAAAAAADu/w0AAgACAAAAAADv/w0AAgACAAAAAADw/w0AAgACAAAAAADx/w0AAgACAAAAAADy/w0AAgACAAAAAADz/w0AAgACAAAAAAD0/w0AAgACAAAAAAD1/w0AAgACAAAAAAD2/w0AAgACAAAAAAADAA0AAgACAAAAAAAEAA0AAgACAAAAAAAFAA0AAgACAAAAAAAGAA0AAgACAAAAAAAHAA0AAgACAAAAAAAIAA0AAgACAAAAAAAJAA0AAgACAAAAAAAKAA0AAgACAAAAAAALAA0AAgACAAAAAAAMAA0AAgACAAAAAADs/wwAAgADAAAAAADr/wsAAgADAAAAAADq/woAAgADAAAAAADp/wkAAgADAAAAAADo/wgAAgADAAAAAADn/wcAAgADAAAAAADm/wYAAgADAAAAAADl/wUAAgADAAAAAADk/wQAAgADAAAAAADj/wMAAgADAAAAAADj/wIAAgADAAAAAADj/wEAAgADAAAAAADj/wAAAgADAAAAAADj////AgADAAAAAADj//7/AgADAAAAAADj//3/AgADAAAAAADj//z/AgADAAAAAADj//v/AgADAAAAAADj//r/AgADAAAAAADj//n/AgADAAAAAADj//j/AgADAAAAAADj//f/AgADAAAAAADj//b/AgADAAAAAAANAAwAAgADAAAAAAAOAAsAAgADAAAAAAAPAAoAAgADAAAAAAAQAAkAAgADAAAAAAARAAgAAgADAAAAAAASAAcAAgADAAAAAAATAAYAAgADAAAAAAAUAAUAAgADAAAAAAAVAAQAAgADAAAAAAAWAAMAAgADAAAAAAAXAAIAAgADAAAAAAAXAAEAAgADAAAAAAAXAAAAAgADAAAAAAAXAP//AgADAAAAAAAXAP7/AgADAAAAAAAXAP3/AgADAAAAAAAXAPz/AgADAAAAAAAXAPv/AgADAAAAAAAXAPr/AgADAAAAAAAXAPn/AgADAAAAAAAXAPj/AgADAAAAAAAXAPf/AgADAAAAAAAXAPb/AgADAAAAAAAXAPX/AgADAAAAAAAXAPT/AgADAAAAAAAXAPP/AgADAAAAAAAXAPL/AgADAAAAAAA=")
 tile_set = SubResource("TileSet_yapkp")
 
 [node name="marble_despawn_zone" parent="." instance=ExtResource("5_yapkp")]
