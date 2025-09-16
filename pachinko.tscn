@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=4 uid="uid://5rdlpi3ghblq"]
+
+[ext_resource type="Script" uid="uid://cg2w0lxd2jkbq" path="res://scripts/marblespawner.gd" id="1_6b7t7"]
+[ext_resource type="PackedScene" uid="uid://ctgdxoohubds7" path="res://marble.tscn" id="1_epw72"]
+[ext_resource type="Texture2D" uid="uid://d21h70axg0spf" path="res://assets/void.png" id="2_gsyfj"]
+[ext_resource type="PackedScene" uid="uid://bxr1a4seff6td" path="res://create_marble_btn.tscn" id="3_33s87"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6b7t7"]
+friction = 0.43
+bounce = 0.2
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33s87"]
+texture = ExtResource("2_gsyfj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_yapkp"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_33s87")
+
+[node name="pachinko" type="Node2D"]
+script = ExtResource("1_6b7t7")
+marble_scene = ExtResource("1_epw72")
+start_pos = Vector2(0, -200)
+metadata/_edit_group_ = true
+
+[node name="Button" parent="." instance=ExtResource("3_33s87")]
+
+[node name="ball" parent="." instance=ExtResource("1_epw72")]
+position = Vector2(9, -113)
+physics_material_override = SubResource("PhysicsMaterial_6b7t7")
+continuous_cd = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AADj//L/AAAEAAAAAADk//L/AAAEAAAAAADk//P/AAAEAAAAAADl//T/AAAEAAAAAADl//X/AAAEAAAAAADm//X/AAAEAAAAAADn//b/AAAEAAAAAADn//f/AAAEAAAAAADn//j/AAAEAAAAAADo//n/AAAEAAAAAADo//r/AAAEAAAAAADp//v/AAAEAAAAAADp//z/AAAEAAAAAADq//3/AAAEAAAAAADq//7/AAAEAAAAAADr////AAAEAAAAAADs/wAAAAAEAAAAAADs/wEAAAAEAAAAAADt/wEAAAAEAAAAAADt/wIAAAAEAAAAAADu/wIAAAAEAAAAAADv/wMAAAAEAAAAAADv/wQAAAAEAAAAAADw/wQAAAAEAAAAAADw/wUAAAAEAAAAAADx/wUAAAAEAAAAAADy/wYAAAAEAAAAAADz/wcAAAAEAAAAAAD0/wgAAAAEAAAAAAD1/wkAAAAEAAAAAAD2/wkAAAAEAAAAAAD3/woAAAAEAAAAAAD3/wsAAAAEAAAAAAD4/wsAAAAEAAAAAAD5/wsAAAAEAAAAAAD5/wwAAAAEAAAAAAD6/wwAAAAEAAAAAAD7/wwAAAAEAAAAAAD8/wwAAAAEAAAAAAD9/wwAAAAEAAAAAAD+/wsAAAAEAAAAAAD//wsAAAAEAAAAAAAAAAsAAAAEAAAAAAABAAsAAAAEAAAAAAACAAsAAAAEAAAAAAADAAoAAAAEAAAAAAAEAAoAAAAEAAAAAAAFAAoAAAAEAAAAAAAGAAkAAAAEAAAAAAAHAAkAAAAEAAAAAAAIAAkAAAAEAAAAAAAIAAgAAAAEAAAAAAAJAAgAAAAEAAAAAAAJAAcAAAAEAAAAAAAKAAcAAAAEAAAAAAALAAYAAAAEAAAAAAAMAAUAAAAEAAAAAAANAAQAAAAEAAAAAAAOAAMAAAAEAAAAAAAOAAIAAAAEAAAAAAAPAAIAAAAEAAAAAAAPAAEAAAAEAAAAAAAQAAEAAAAEAAAAAAAQAAAAAAAEAAAAAAARAP//AAAEAAAAAAARAP7/AAAEAAAAAAASAP7/AAAEAAAAAAASAP3/AAAEAAAAAAASAPz/AAAEAAAAAAATAPv/AAAEAAAAAAAUAPr/AAAEAAAAAAAUAPn/AAAEAAAAAAAVAPj/AAAEAAAAAAAVAPf/AAAEAAAAAAAWAPf/AAAEAAAAAAAWAPb/AAAEAAAAAAAXAPX/AAAEAAAAAAAXAPT/AAAEAAAAAAAYAPP/AAAEAAAAAAAZAPP/AAAEAAAAAAAZAPL/AAAEAAAAAAAaAPL/AAAEAAAAAAA=")
+tile_set = SubResource("TileSet_yapkp")

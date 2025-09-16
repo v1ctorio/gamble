@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxr1a4seff6td"]
+
+[ext_resource type="Script" uid="uid://dw6g25gjblh3h" path="res://scripts/marblebutton.gd" id="1_3o7ar"]
+[ext_resource type="PackedScene" uid="uid://ctgdxoohubds7" path="res://marble.tscn" id="2_g5gj1"]
+
+[node name="Button" type="Button"]
+offset_right = 116.0
+offset_bottom = 55.0
+text = "Click to create marble"
+script = ExtResource("1_3o7ar")
+marble_scene = ExtResource("2_g5gj1")
