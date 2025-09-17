@@ -14,6 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if _charging:
 		_duration_pressed += delta
+		$ProgressBar.progress = _duration_pressed
 
 
 func _on_button_down() -> void:
@@ -31,6 +32,9 @@ func _on_button_up() -> void:
 	var vel = 300.0 * (_duration_pressed+1)
 	
 	spawn_marble_with_v(spawn_pos, dir, vel)
+	
+	await get_tree().create_timer(0.1).timeout
+	$ProgressBar.progress = 0
 	print(_duration_pressed)
 	_duration_pressed = 0.0
 

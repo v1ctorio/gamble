@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://5rdlpi3ghblq"]
 
-[ext_resource type="Script" uid="uid://cg2w0lxd2jkbq" path="res://scripts/marblespawner.gd" id="1_6b7t7"]
+[ext_resource type="Script" uid="uid://clt07pg4iorei" path="res://scripts/pachinko.gd" id="1_3huoa"]
 [ext_resource type="PackedScene" uid="uid://ctgdxoohubds7" path="res://marble.tscn" id="1_epw72"]
 [ext_resource type="Texture2D" uid="uid://d21h70axg0spf" path="res://assets/void.png" id="2_gsyfj"]
 [ext_resource type="PackedScene" uid="uid://bxr1a4seff6td" path="res://create_marble_btn.tscn" id="3_33s87"]
@@ -49,19 +49,19 @@ sources/0 = SubResource("TileSetAtlasSource_33s87")
 sources/2 = SubResource("TileSetAtlasSource_e27ee")
 
 [node name="pachinko" type="Node2D"]
-script = ExtResource("1_6b7t7")
-marble_scene = ExtResource("1_epw72")
-start_pos = Vector2(0, -200)
+script = ExtResource("1_3huoa")
+count = 13
+beggining = Vector2(-185, -30)
 metadata/_edit_group_ = true
 
 [node name="Button" parent="." instance=ExtResource("3_33s87")]
-offset_left = 377.0
-offset_top = -293.0
-offset_right = 554.0
-offset_bottom = -238.0
+offset_left = 395.0
+offset_top = -295.0
+offset_right = 572.0
+offset_bottom = -240.0
 
 [node name="ball" parent="." instance=ExtResource("1_epw72")]
-position = Vector2(-474, -203)
+position = Vector2(-186, -24)
 physics_material_override = SubResource("PhysicsMaterial_6b7t7")
 continuous_cd = 2
 
@@ -73,5 +73,5 @@ tile_map_data = PackedByteArray("AADt/w0AAgACAAAAAADu/w0AAgACAAAAAADv/w0AAgACAAA
 tile_set = SubResource("TileSet_yapkp")
 
 [node name="marble_despawn_zone" parent="." instance=ExtResource("5_yapkp")]
-position = Vector2(-33, 232)
+position = Vector2(-36, 283)
 scale = Vector2(2.7498436, 1.2270772)
