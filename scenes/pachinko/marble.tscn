@@ -1,23 +1,23 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctgdxoohubds7"]
 
-[ext_resource type="Texture2D" uid="uid://m4c05you04g7" path="res://icon.svg" id="1_7ritg"]
-[ext_resource type="Script" uid="uid://cql2333y7qo3" path="res://scripts/marble_logic.gd" id="1_sk24e"]
+[ext_resource type="Script" uid="uid://cql2333y7qo3" path="res://scripts/marble_logic.gd" id="1_rtikf"]
+[ext_resource type="Texture2D" uid="uid://m4c05you04g7" path="res://icon.svg" id="2_cjh7w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7ritg"]
 friction = 0.5
-bounce = 0.77
+bounce = 0.37
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ritg"]
 radius = 25.019993
 
 [node name="Marble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_7ritg")
-script = ExtResource("1_sk24e")
+script = ExtResource("1_rtikf")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_7ritg")
+texture = ExtResource("2_cjh7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ritg")

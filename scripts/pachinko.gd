@@ -1,5 +1,11 @@
 extends Node2D
 
+func _ready() -> void:
+	_obstacles_spawn()
+	_score_tiles_spawn()
+	
+
+
 @export var count: int = 9
 @export var per_row: int = 3
 @export var beggining: Vector2
@@ -7,19 +13,24 @@ extends Node2D
 @export var row_spacing: Vector2 = Vector2(0.0,100.0)
 var obstacle: PackedScene = load("res://scenes/pachinko/obstacle.tscn")
 
-func _ready() -> void:
-	var pos = beggining
-	var j = 0
-	var row = 0
+
+func _obstacles_spawn():
 	for i in count:
-		j = j+1 
+		var row = i / per_row
+		var col = i % per_row
 		var obs := obstacle.instantiate() as StaticBody2D
 		add_child(obs)
-		if j > per_row:
-			row = row + 1
-			j = 1
+		obs.position = beggining + horizontal_spacing * col + row_spacing * row
 		
+
+var score_tile: PackedScene = load("res://scenes/pachinko/score_tile.tscn")
+
+var possibleLocations: Array[Vector2] = [Vector2(0.0,0.0)]
+
+func _score_tiles_spawn():
+	for i in len(possibleLocations):
+		var tile := score_tile.instantiate() as Node2D
+		add_child(tile)
+		tile.position = possibleLocations[i]
 		
-		obs.position = pos + row_spacing * row - horizontal_spacing * row
-		pos = pos + horizontal_spacing
-		
+	pass

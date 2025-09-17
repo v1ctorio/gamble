@@ -14,3 +14,4 @@ Will have a lot of easter-eggs and a gallery to admire your trphies.
 - [ ] Make the first trophies
 - [ ] Make the gallery
 - [ ] Make the aspect ratio dynamic
+- [x] Create obstacles and dynamically spawn them
