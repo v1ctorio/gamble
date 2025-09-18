@@ -8,7 +8,7 @@ friction = 0.5
 bounce = 0.37
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ritg"]
-radius = 17.029387
+radius = 13.0
 
 [node name="Marble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_7ritg")

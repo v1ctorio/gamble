@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://5rdlpi3ghblq"]
+[gd_scene load_steps=13 format=4 uid="uid://5rdlpi3ghblq"]
 
 [ext_resource type="Script" uid="uid://clt07pg4iorei" path="res://scripts/pachinko.gd" id="1_3huoa"]
 [ext_resource type="PackedScene" uid="uid://ctgdxoohubds7" path="res://scenes/pachinko/marble.tscn" id="1_epw72"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxwlsueenmku7" path="res://assets/floor.png" id="5_3huoa"]
 [ext_resource type="PackedScene" uid="uid://dd5d61adbgqn3" path="res://marble_despawn_zone.tscn" id="5_yapkp"]
 [ext_resource type="PackedScene" uid="uid://c8njfbt130pbl" path="res://scenes/pachinko/score_tile.tscn" id="7_e27ee"]
+[ext_resource type="PackedScene" uid="uid://0san22hrnag0" path="res://scenes/pachinko/score_pipe.tscn" id="8_oss1s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6b7t7"]
 friction = 0.43
@@ -79,8 +80,13 @@ tile_map_data = PackedByteArray("AADn/w8AAAAEAAAAAADn/xAAAAAEAAAAAADn/xEAAAAEAAA
 tile_set = SubResource("TileSet_yapkp")
 
 [node name="marble_despawn_zone" parent="." instance=ExtResource("5_yapkp")]
-position = Vector2(-498.00003, 490)
+position = Vector2(-505, 580)
 scale = Vector2(22.516054, -3.9331963)
 
 [node name="StaticBody2D" parent="." instance=ExtResource("7_e27ee")]
 position = Vector2(-195, -146)
+
+[node name="ScorePipe" parent="." instance=ExtResource("8_oss1s")]
+position = Vector2(-311, 241.00002)
+scale = Vector2(17.484802, 14.581041)
+giving_score = 3
