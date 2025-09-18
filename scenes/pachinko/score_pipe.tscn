@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://0san22hrnag0"]
+[gd_scene load_steps=4 format=3 uid="uid://0san22hrnag0"]
 
 [ext_resource type="Script" uid="uid://cffmvole0sexw" path="res://scenes/pachinko/score_pipe.gd" id="1_11hvb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_11hvb"]
+font_size = 28
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_isxtw"]
 size = Vector2(3, 6)
 
 [node name="ScorePipe" type="Node2D"]
+scale = Vector2(16.553728, 14.385767)
 script = ExtResource("1_11hvb")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -25,6 +29,7 @@ scale = Vector2(-1.7380443, 2.7895539)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.5118882, 0.8573731, 0.5046572, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(2.56, 2.815)
@@ -41,14 +46,17 @@ scale = Vector2(2.304304, 0.42971843)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.5118882, 0.8573731, 0.5046572, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1.0000001
 offset_right = 11.0
 offset_bottom = 23.0
-scale = Vector2(0.34, 0.34)
+scale = Vector2(0.21793084, 0.218963)
 text = "2"
+label_settings = SubResource("LabelSettings_11hvb")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 

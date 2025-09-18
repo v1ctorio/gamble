@@ -87,6 +87,20 @@ scale = Vector2(22.516054, -3.9331963)
 position = Vector2(-195, -146)
 
 [node name="ScorePipe" parent="." instance=ExtResource("8_oss1s")]
-position = Vector2(-311, 241.00002)
-scale = Vector2(17.484802, 14.581041)
+position = Vector2(-310, 240)
+scale = Vector2(14.479217, 14.245744)
 giving_score = 3
+
+[node name="ScorePipe2" parent="." instance=ExtResource("8_oss1s")]
+position = Vector2(87, 240.99998)
+giving_score = 1
+
+[node name="ScorePipe3" parent="." instance=ExtResource("8_oss1s")]
+position = Vector2(-170, 237)
+scale = Vector2(11.515637, 14.728286)
+giving_score = 5
+color = Color(0, 0.88235295, 0.9019608, 1)
+
+[node name="ScorePipe4" parent="." instance=ExtResource("8_oss1s")]
+position = Vector2(223, 242)
+color = Color(0.77270937, 0.7055149, 0.12687725, 1)

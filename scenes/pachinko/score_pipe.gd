@@ -1,10 +1,14 @@
 extends Node2D
 
 @export var giving_score: int = 0
+@export var color: Color
 
 func _ready() -> void:
 	$Label.text = str(giving_score)
 	$Area2D.body_entered.connect(_on_body_entered)
+	if color: 
+		$ColorRect.color = color
+		$ColorRect2.color = color 
 
 
 func _on_body_entered(body) -> void:
