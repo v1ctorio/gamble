@@ -8,7 +8,7 @@ friction = 0.5
 bounce = 0.37
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ritg"]
-radius = 25.019993
+radius = 17.029387
 
 [node name="Marble" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_7ritg")
@@ -16,7 +16,7 @@ script = ExtResource("1_rtikf")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.2636625, 0.2636625)
 texture = ExtResource("2_cjh7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
