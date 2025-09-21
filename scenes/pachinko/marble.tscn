@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctgdxoohubds7"]
+[gd_scene load_steps=6 format=3 uid="uid://ctgdxoohubds7"]
 
 [ext_resource type="Script" uid="uid://cql2333y7qo3" path="res://scripts/marble_logic.gd" id="1_rtikf"]
 [ext_resource type="Texture2D" uid="uid://m4c05you04g7" path="res://icon.svg" id="2_cjh7w"]
+[ext_resource type="Texture2D" uid="uid://bgao3cm5iyu64" path="res://assets/aesprite/Sprite-0002.png" id="3_cjh7w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7ritg"]
 friction = 0.5
@@ -16,8 +17,12 @@ script = ExtResource("1_rtikf")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(0.2636625, 0.2636625)
 texture = ExtResource("2_cjh7w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7ritg")
+
+[node name="Sprite0002" type="Sprite2D" parent="."]
+texture = ExtResource("3_cjh7w")

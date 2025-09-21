@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxwsk3gfsaobx"]
+[gd_scene load_steps=3 format=3 uid="uid://bxwsk3gfsaobx"]
+
+[ext_resource type="Texture2D" uid="uid://4kgk12augjol" path="res://assets/aesprite/Sprite-0002a.png" id="1_qhvu6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t167m"]
 
@@ -6,3 +8,6 @@
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_t167m")
+
+[node name="Sprite0002a" type="Sprite2D" parent="."]
+texture = ExtResource("1_qhvu6")
