@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxwlsueenmku7" path="res://assets/floor.png" id="5_3huoa"]
 [ext_resource type="PackedScene" uid="uid://dd5d61adbgqn3" path="res://marble_despawn_zone.tscn" id="5_yapkp"]
 [ext_resource type="PackedScene" uid="uid://c8njfbt130pbl" path="res://scenes/pachinko/score_tile.tscn" id="7_e27ee"]
-[ext_resource type="PackedScene" uid="uid://0san22hrnag0" path="res://scenes/pachinko/score_pipe.tscn" id="8_oss1s"]
+[ext_resource type="PackedScene" uid="uid://bssyckix4djqv" path="res://scenes/pachinko/obstacle_row.tscn" id="8_oss1s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6b7t7"]
 friction = 0.43
@@ -52,11 +52,6 @@ sources/2 = SubResource("TileSetAtlasSource_e27ee")
 
 [node name="pachinko" type="Node2D"]
 script = ExtResource("1_3huoa")
-count = 15
-per_row = 5
-beggining = Vector2(-200, -180)
-horizontal_spacing = Vector2(100, 0)
-row_spacing = Vector2(0, 125)
 metadata/_edit_group_ = true
 
 [node name="Button" parent="." instance=ExtResource("3_33s87")]
@@ -85,21 +80,56 @@ scale = Vector2(22.516054, -3.9331963)
 [node name="StaticBody2D" parent="." instance=ExtResource("7_e27ee")]
 position = Vector2(-195, -146)
 
-[node name="ScorePipe" parent="." instance=ExtResource("8_oss1s")]
-position = Vector2(-310, 240)
-scale = Vector2(14.479217, 14.245744)
-giving_score = 3
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
 
-[node name="ScorePipe2" parent="." instance=ExtResource("8_oss1s")]
-position = Vector2(87, 240.99998)
-giving_score = 1
+[node name="ObstacleRow" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -462.0
+offset_top = -414.0
+offset_right = 445.0
+offset_bottom = -374.0
+count = 6
 
-[node name="ScorePipe3" parent="." instance=ExtResource("8_oss1s")]
-position = Vector2(-170, 237)
-scale = Vector2(11.515637, 14.728286)
-giving_score = 5
-color = Color(0, 0.88235295, 0.9019608, 1)
+[node name="obstacle_row" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -385.0
+offset_top = -327.0
+offset_right = 335.0
+offset_bottom = -287.0
 
-[node name="ScorePipe4" parent="." instance=ExtResource("8_oss1s")]
-position = Vector2(223, 242)
-color = Color(0.77270937, 0.7055149, 0.12687725, 1)
+[node name="ObstacleRow2" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -464.0
+offset_top = -256.0
+offset_right = 443.0
+offset_bottom = -216.0
+count = 6
+
+[node name="obstacle_row2" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -387.0
+offset_top = -169.0
+offset_right = 333.0
+offset_bottom = -129.0
+
+[node name="ObstacleRow3" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -462.0
+offset_top = -88.0
+offset_right = 445.0
+offset_bottom = -48.0
+count = 6
+
+[node name="obstacle_row3" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -385.0
+offset_top = -1.0
+offset_right = 335.0
+offset_bottom = 39.0
+
+[node name="ObstacleRow4" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -464.0
+offset_top = 70.0
+offset_right = 443.0
+offset_bottom = 110.0
+count = 6
+
+[node name="obstacle_row4" parent="CanvasGroup" instance=ExtResource("8_oss1s")]
+offset_left = -387.0
+offset_top = 157.0
+offset_right = 333.0
+offset_bottom = 197.0
