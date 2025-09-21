@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1upmbfm33c4f"]
+
+[ext_resource type="Script" uid="uid://meoh1plosumu" path="res://scenes/pachinko/marble_source.gd" id="1_nblaq"]
+
+[node name="MarbleSource" type="Marker2D"]
+script = ExtResource("1_nblaq")
+trigger_event = &"left_arrow"
